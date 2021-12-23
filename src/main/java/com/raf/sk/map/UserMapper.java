@@ -5,7 +5,9 @@ import com.raf.sk.dto.UserCreateDto;
 import com.raf.sk.dto.UserDto;
 import com.raf.sk.repository.RankRepository;
 import com.raf.sk.repository.RoleRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserMapper {
 
     private RankRepository rankRepository;
