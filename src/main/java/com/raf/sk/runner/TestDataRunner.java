@@ -1,4 +1,4 @@
-package com.raf.sk;
+package com.raf.sk.runner;
 
 import com.raf.sk.domain.Rank;
 import com.raf.sk.domain.Role;
@@ -32,20 +32,20 @@ public class TestDataRunner implements CommandLineRunner{
         roleRepository.save(roleUser);
         roleRepository.save(roleAdmin);
         //Insert ranks
-        Rank rankBronze = new Rank("Bronze", 0, 0);
-        Rank rankSilver = new Rank("Silver", 5, 10);
-        Rank rankGold = new Rank("Gold", 10, 20);
-        rankRepository.save(rankBronze);
-        rankRepository.save(rankSilver);
-        rankRepository.save(rankGold);
-        //Insert admin
-        User admin = new User();
-        admin.setEmail("admin@gmail.com");
-        admin.setPassword("admin");
-        admin.setRole(roleAdmin);
-        admin.setIme("admin");
-        admin.setPrezime("pera");
-
-        userRepository.save(admin);
+//        Rank rankBronze = new Rank("Bronze", 0, 0);
+//        Rank rankSilver = new Rank("Silver", 5, 10);
+//        Rank rankGold = new Rank("Gold", 10, 20);
+//        rankRepository.save(rankBronze);
+//        rankRepository.save(rankSilver);
+//        rankRepository.save(rankGold);
+//        //Insert admin
+//        User admin = new User();
+//        admin.setEmail("admin@gmail.com");
+//        admin.setPassword("admin");
+//        admin.setRole(roleAdmin);
+//        admin.setIme("admin");
+//        admin.setPrezime("pera");
+//
+//        userRepository.save(admin);
     }
 }

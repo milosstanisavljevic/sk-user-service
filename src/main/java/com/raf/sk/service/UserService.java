@@ -4,9 +4,11 @@ import com.raf.sk.dto.TokenRequestDto;
 import com.raf.sk.dto.TokenResponseDto;
 import com.raf.sk.dto.UserCreateDto;
 import com.raf.sk.dto.UserDto;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface UserService {
 
     List<UserDto> findAll();
@@ -19,7 +21,7 @@ public interface UserService {
 
     TokenResponseDto login(TokenRequestDto tokenRequestDto);
 
-    UserDto updateNumberOfReservations();
+    UserDto updateNumberOfReservations(Integer number);
 
     UserDto editUser(String authorization,UserCreateDto userCreateDto);
 }

@@ -58,8 +58,8 @@ public class UserServiceImpl implements UserService{
     public UserDto add(UserCreateDto userCreateDto) {
         User user = userMapper.userCreateDtoToUser(userCreateDto);
         Rank rank = rankRepository.findByType("Bronze").orElseThrow();
-        Role role = roleRepository.findByName("ROLE_USER").orElseThrow();
-        user.setRank(rank);
+        Role role = roleRepository.findByRoleName("ROLE_USER").orElseThrow();
+        user.setRank1(rank);
         user.setRole(role);
         userRepository.save(user);
         System.out.println(user.getEmail());
@@ -76,7 +76,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public TokenResponseDto login(TokenRequestDto tokenRequestDto) {
         User user = userRepository
-                .finduserByCredentials(tokenRequestDto.getEmail(), tokenRequestDto.getPassword())
+                .findUserByEmailAndPassword(tokenRequestDto.getEmail(), tokenRequestDto.getPassword())
                 .orElseThrow();
         //Create token payload
         Claims claims = Jwts.claims();
@@ -88,8 +88,8 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserDto updateNumberOfReservations() {
-        return null;
+    public UserDto updateNumberOfReservations(Integer number) {
+       return null;
     }
 
     @Override

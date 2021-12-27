@@ -1,9 +1,8 @@
 package com.raf.sk.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Rank {
@@ -11,9 +10,13 @@ public class Rank {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String type;
+    @Column
     private int discount;
+    @Column
     private int numberOfReservations;
+
 
     public Rank(){
 
@@ -23,6 +26,7 @@ public class Rank {
         this.type = type;
         this.discount = discount;
         this.numberOfReservations = numberOfReservations;
+
     }
 
     public Long getId() {

@@ -26,7 +26,7 @@ public class UserMapper {
         userDto.setEmail(user.getEmail());
         userDto.setDateOfBirth(user.getDateOfBirth());
         userDto.setNumberOfReservations(user.getNumberOfReservations());
-        userDto.setRank(user.getRank());
+        userDto.setRank(user.getRank1());
         return userDto;
     }
 
