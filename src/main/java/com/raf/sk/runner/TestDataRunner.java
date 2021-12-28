@@ -1,8 +1,8 @@
 package com.raf.sk.runner;
 
-import com.raf.sk.domain.Rank;
 import com.raf.sk.domain.Role;
 import com.raf.sk.domain.User;
+import com.raf.sk.domain.UserRank;
 import com.raf.sk.repository.RankRepository;
 import com.raf.sk.repository.RoleRepository;
 import com.raf.sk.repository.UserRepository;
@@ -27,14 +27,14 @@ public class TestDataRunner implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
 
-        Role roleUser = new Role("ROLE_USER");
-        Role roleAdmin = new Role("ROLE_ADMIN");
-        roleRepository.save(roleUser);
-        roleRepository.save(roleAdmin);
+//        Role roleUser = new Role("ROLE_USER");
+//        Role roleAdmin = new Role("ROLE_ADMIN");
+//        roleRepository.save(roleUser);
+//        roleRepository.save(roleAdmin);
         //Insert ranks
-//        Rank rankBronze = new Rank("Bronze", 0, 0);
-//        Rank rankSilver = new Rank("Silver", 5, 10);
-//        Rank rankGold = new Rank("Gold", 10, 20);
+//        UserRank rankBronze = new UserRank("Bronze", 0, 0);
+//        UserRank rankSilver = new UserRank("Silver", 5, 10);
+//        UserRank rankGold = new UserRank("Gold", 10, 20);
 //        rankRepository.save(rankBronze);
 //        rankRepository.save(rankSilver);
 //        rankRepository.save(rankGold);

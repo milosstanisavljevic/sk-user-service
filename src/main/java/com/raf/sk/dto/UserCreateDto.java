@@ -1,6 +1,6 @@
 package com.raf.sk.dto;
 
-import com.raf.sk.domain.Rank;
+import com.raf.sk.domain.UserRank;
 import com.raf.sk.domain.Role;
 
 import java.util.Date;
@@ -15,7 +15,7 @@ public class UserCreateDto {
     private int kontakt;
     private Date dateOfBirth;
     private Role role;
-    private Rank rank;
+    private UserRank userRank;
     private int numberOfReservations;
 
     public String getUsername() {
@@ -82,12 +82,12 @@ public class UserCreateDto {
         this.role = role;
     }
 
-    public Rank getRank() {
-        return rank;
+    public UserRank getUserRank() {
+        return userRank;
     }
 
-    public void setRank(Rank rank) {
-        this.rank = rank;
+    public void setUserRank(UserRank userRank) {
+        this.userRank = userRank;
     }
 
     public int getNumberOfReservations() {

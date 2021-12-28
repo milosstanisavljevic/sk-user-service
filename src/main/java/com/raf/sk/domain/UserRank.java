@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Rank {
+public class UserRank {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +18,11 @@ public class Rank {
     private int numberOfReservations;
 
 
-    public Rank(){
+    public UserRank(){
 
     }
 
-    public Rank(String type, int discount, int numberOfReservations) {
+    public UserRank(String type, int discount, int numberOfReservations) {
         this.type = type;
         this.discount = discount;
         this.numberOfReservations = numberOfReservations;

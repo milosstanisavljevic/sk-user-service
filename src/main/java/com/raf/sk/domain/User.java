@@ -26,7 +26,7 @@ public class User {
     @ManyToOne(optional = false)
     private Role role;
     @ManyToOne(optional = true)
-    private Rank rank1;
+    private UserRank userRank;
     @Column(length = 10)
     private int numberOfReservations;
 
@@ -109,11 +109,11 @@ public class User {
         this.role = role;
     }
 
-    public Rank getRank1() {
-        return rank1;
+    public UserRank getUserRank() {
+        return userRank;
     }
 
-    public void setRank1(Rank rank) {
-        this.rank1 = rank;
+    public void setUserRank(UserRank userRank) {
+        this.userRank = userRank;
     }
 }

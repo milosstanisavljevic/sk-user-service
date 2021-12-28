@@ -1,7 +1,7 @@
 package com.raf.sk.service;
 
 
-import com.raf.sk.domain.Rank;
+import com.raf.sk.domain.UserRank;
 import com.raf.sk.domain.Role;
 import com.raf.sk.domain.User;
 import com.raf.sk.dto.TokenRequestDto;
@@ -57,9 +57,9 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserDto add(UserCreateDto userCreateDto) {
         User user = userMapper.userCreateDtoToUser(userCreateDto);
-        Rank rank = rankRepository.findByType("Bronze").orElseThrow();
+        UserRank userRank = rankRepository.findByType("Bronze").orElseThrow();
         Role role = roleRepository.findByRoleName("ROLE_USER").orElseThrow();
-        user.setRank1(rank);
+        user.setUserRank(userRank);
         user.setRole(role);
         userRepository.save(user);
         System.out.println(user.getEmail());
@@ -75,6 +75,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public TokenResponseDto login(TokenRequestDto tokenRequestDto) {
+        System.out.println(tokenRequestDto.getEmail() +"  "+ tokenRequestDto.getPassword());
         User user = userRepository
                 .findUserByEmailAndPassword(tokenRequestDto.getEmail(), tokenRequestDto.getPassword())
                 .orElseThrow();

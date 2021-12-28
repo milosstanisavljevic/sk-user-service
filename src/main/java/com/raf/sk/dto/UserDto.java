@@ -1,10 +1,8 @@
 package com.raf.sk.dto;
 
-import com.raf.sk.domain.Rank;
+import com.raf.sk.domain.UserRank;
 import com.raf.sk.domain.Role;
 
-import javax.persistence.Column;
-import javax.persistence.ManyToOne;
 import java.util.Date;
 
 public class UserDto {
@@ -17,7 +15,7 @@ public class UserDto {
     private int kontakt;
     private Date dateOfBirth;
     private Role role;
-    private Rank rank;
+    private UserRank userRank;
     private int numberOfReservations;
 
     public Long getId() {
@@ -92,12 +90,12 @@ public class UserDto {
         this.role = role;
     }
 
-    public Rank getRank() {
-        return rank;
+    public UserRank getUserRank() {
+        return userRank;
     }
 
-    public void setRank(Rank rank) {
-        this.rank = rank;
+    public void setUserRank(UserRank userRank) {
+        this.userRank = userRank;
     }
 
     public int getNumberOfReservations() {
