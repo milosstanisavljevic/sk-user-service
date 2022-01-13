@@ -63,7 +63,6 @@ public class UserServiceImpl implements UserService{
         user.setRole(role);
         userRepository.save(user);
         System.out.println(user.getEmail());
-        //emailService.sendSimpleMessage(user.getEmail(), "Registracija", "Uspesno ste registrovani!");
 
         return userMapper.userToUserDto(user);
     }

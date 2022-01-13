@@ -4,6 +4,7 @@ import com.raf.sk.dto.TokenRequestDto;
 import com.raf.sk.dto.TokenResponseDto;
 import com.raf.sk.dto.UserCreateDto;
 import com.raf.sk.dto.UserDto;
+import com.raf.sk.security.CheckSecurity;
 import com.raf.sk.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,7 +29,7 @@ public class UserController {
         return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<UserDto> saveUser(@RequestBody UserCreateDto userCreateDto){
         return new ResponseEntity<>(userService.add(userCreateDto),HttpStatus.CREATED);
     }
