@@ -42,9 +42,9 @@ public class UserController {
     public ResponseEntity<UserDto> findById(@RequestHeader("Authorization") String authorization, @PathVariable("id") Integer id){
         return new ResponseEntity<UserDto>(userService.findById(id), HttpStatus.OK);
     }
-    @PutMapping("/updateNumberOfReservations")
-    public ResponseEntity<UserDto> updateNumberOfReservations(@RequestBody Integer numberOfRes){
-        return new ResponseEntity<>(userService.updateNumberOfReservations(numberOfRes),HttpStatus.OK);
+    @PutMapping("/updateNumberOfReservations/{id}")
+    public ResponseEntity<UserDto> updateNumberOfReservations(@PathVariable("id") Integer id){
+        return new ResponseEntity<>(userService.updateNumberOfReservations(id),HttpStatus.OK);
     }
 
 }

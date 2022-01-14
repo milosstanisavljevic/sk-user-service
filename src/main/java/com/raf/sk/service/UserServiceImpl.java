@@ -88,8 +88,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserDto updateNumberOfReservations(Integer number) {
-       return null;
+    public UserDto updateNumberOfReservations(Integer id) {
+        User user = userRepository.findById(id).orElseThrow();
+        user.setNumberOfReservations(user.getNumberOfReservations()+1);
+        userRepository.save(user);
+        return userMapper.userToUserDto(user);
     }
 
     @Override
